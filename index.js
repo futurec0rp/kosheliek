@@ -1,7 +1,7 @@
 const ethers=  require("ethers");
 const {parseUnits, parseEther, Contract} = require("ethers");
-const url = 'https://binance.llamarpc.com'
-const privateKey = '0x264232763fc62b36a2bb6b1501ab35f679823793f62253dcedff77a2f0de9234'
+const url = ''
+const privateKey = '
 const provider = new ethers.JsonRpcProvider(url)
 const wallet = new ethers.Wallet(privateKey, provider)
 const ERC20 = 'адрес вашего токена'
@@ -9,7 +9,7 @@ const abi = [
     "function transfer(address to, uint amount)",
     "function balanceOf(address account) returns (uint)",
 ]
-async function getBalance() {
+async function getBalance("") {
     const balance = await provider.getBalance(wallet.address)
     const balanceInEth = ethers.formatEther(balance) // wei to ether
     console.log(balanceInEth.toString())
@@ -34,6 +34,6 @@ async function sendErc20() {
 
 }
 //вызов функций
-sendErc20()
-getBalance()
-sendEth()
+sendErc20("отправить токен")
+getBalance("баланс")
+sendEth("отправить эфир")
